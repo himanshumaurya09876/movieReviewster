@@ -113,12 +113,11 @@ p {
 
 /* Search Movies */
 .intro-searchmovie {
-  background: rgb(107, 77, 28);
-  /* background: url("https://source.unsplash.com/user/jackie/likes/1600x900")
-    no-repeat center center/cover; */
-  font-family: "Cinzel", serif;
+  /* font-family: "Cinzel", serif; */
+  font-family: "Lobster", cursive;
+  /* font-family: "Courgette", cursive; */
   height: 80vh;
-  color: #ffffff;
+  color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,13 +126,13 @@ p {
 }
 
 .intro-searchmovie h3 {
-  font-size: 45px;
+  font-size: 3.2rem;
 }
-.intro-searchmovie p {
+/* .intro-searchmovie p {
   font-size: 20px;
   max-width: 1000px;
   margin: 20px 0 30px;
-}
+} */
 .search-movies a {
   color: #ffffff;
   background-color: rgba(10, 30, 50, 1);
@@ -280,8 +279,10 @@ p {
 }
 
 #about-info .info-left p {
-  font-family: "Indie Flower", cursive;
-  font-size: 1.2rem;
+  /* font-family: "Indie Flower", cursive;
+  font-weight: bold; */
+  font-family: "Courgette", cursive;
+  font-size: 1rem;
   padding-left: 3vw;
   padding-right: 3vw;
 }
@@ -497,7 +498,11 @@ p {
   background-color: #333;
   color: #ffffff;
 }
-
+#movie-category {
+  font-family: "Courgette", cursive;
+  color: mediumorchid;
+  text-decoration: underline;
+}
 /* footer */
 
 .footer {
@@ -540,10 +545,15 @@ p {
 }
 /* main-nav index page */
 .intro-bg {
-  /* background: url("https://source.unsplash.com/WLUHO9A_xik/1600x900") no-repeat
-    center center/cover; */
   background: url("intro-bg_1.jpg") no-repeat center center/cover;
-  border-bottom: #767674 solid 2px;
+  height: 100vh;
+  color: #333;
+  font-weight: bold;
+}
+/* search movies page */
+.searchmovies-bg {
+  background: url("searchmovie_bg_3.jpg") no-repeat center center/cover;
+
   height: 100vh;
   color: #333;
   font-weight: bold;
