@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/0645962c25.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='style.css') }}"
+    />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <title>Movie Review Classifer | Add Review</title>
+  </head>
+
+  <body>
+    <!-- Nav-bar -->
+    <nav id="main-nav">
+      <div class="container">
+        <h1 class="logo"><a href="/"> Movie Review Classifer</a></h1>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Form -->
+    <div id="contact-form">
+      <div class="container">
+        <h1 class="l-heading">
+          Add Your <span class="text-primary">Review </span>
+        </h1>
+        <p>Please fill out the form below to submit your review</p>
+        <form action="/submitReview" method="post">
+          <div class="form-group">
+            <label for="name">Enter your name</label>
+            <input type="text" name="name" id="name" />
+          </div>
+
+          <div class="form-group">
+            <label for="Moviename">Enter the movie name</label>
+            <input type="text" name="Moviename" id="Moviename" />
+          </div>
+
+          <div class="form-group">
+            <label for="review">Enter your review</label>
+            <textarea
+              name="review"
+              id="message"
+              placeholder="Type Your review Here..."
+            ></textarea>
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+    </div>
+    <!-- Result after Submitting Review-->
+
+    {% if prediction: %}
+    <section id="search-results">
+      <div class="search-results-container">
+        <h3>
+          &#128526; Thankyou very much {{name}}, for your valuable contribution
+          &#128519;!!!
+        </h3>
+        <div class="flex-container">
+          <div class="flex-item-left">
+            <h2>{{movieName}}</h2>
+            <h4>{{review}}</h4>
+            {% if prediction=="Positive": %}
+            <p>&#128525; Positive Review &#128525;</p>
+            {% else: %}
+            <p>&#128557; Negative Review &#128557;</p>
+            {% endif %}
+          </div>
+          <div class="flex-item-right">
+            <h5>Rating</h5>
+            <div>
+              {% for i in range(rating): %}
+              <span style="font-size: 300%; color: yellow">&starf;</span>
+              {% endfor %} {% for i in range(5-rating): %}
+              <span style="font-size: 300%; color: black">&star;</span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {%endif%}
+
+    <!-- Footer -->
+    <footer class="footer bg-dark">
+      <div class="social">
+        <a href="http://facebook.com" target="_blank"
+          ><i class="fab fa-facebook fa-2x"></i
+        ></a>
+        <a href="http://instagram.com" target="_blank"
+          ><i class="fab fa-instagram fa-2x"></i
+        ></a>
+        <a href="http://twitter.com" target="_blank"
+          ><i class="fab fa-twitter fa-2x"></i
+        ></a>
+        <a href="http://linkedin.com" target="_blank"
+          ><i class="fab fa-linkedin fa-2x"></i
+        ></a>
+        <a href="http://youtube.com" target="_blank"
+          ><i class="fab fa-youtube fa-2x"></i
+        ></a>
+      </div>
+      <p>Copyright &copy; 2021 - Movie Review Classifer</p>
+      <p>Created by: Himanshu Maurya & Kumar Sundaram</p>
+    </footer>
+  </body>
+</html>
