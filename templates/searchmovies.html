@@ -135,24 +135,25 @@
         </div>
         {% else %}
         <div>
-          <h4>{{foundMovie["movieName"]}}</h4>
+          <h4 style="font-size: 2.2rem;">{{foundMovie["movieName"]}}</h4>
           <p>Total reviews: {{foundMovie["totalReviews"]}}</p>
           <p>Positive Reviews: {{foundMovie["positiveReviews"]}}</p>
           <p>Negative Reviews: {{foundMovie["totalReviews"]-foundMovie["positiveReviews"]}}</p>
-          <p>Rating:
+          <p style=" margin-bottom: 3rem;">Rating:
+            <br>
           {% for i in range(foundMovie["rating"]): %}
-          <span style="font-size:200%;color:yellow;">&starf;</span>
+          <span style="font-size:200%;color: black;">&starf;</span>
           {% endfor %}
 
           {% for i in range(5-foundMovie["rating"]): %}
           <span style="font-size:200%;color:black;">&star;</span>
           {% endfor %}
           </p>
-        </br>
+        <!-- </br> -->
           <h4>Reviews are:- </h4>
           <ol>
             {% for rev in foundMovie["reviewsList"]: %}
-              <li>{{rev["name"]}} :- {{rev["review"]}}</li>
+              <li style="margin-bottom: 1rem;">{{rev["name"]}} :- {{rev["review"]}}</li>
             {% endfor %}
           </ol>
         {% endif %}
@@ -165,9 +166,9 @@
       <div class="movie-list-container">
         <h3>Movies List</h3>
         <h4>OR Choose your movie from this List!</h4>
-        <form method="post" action="/findMovieFromList" id="movie-show-list">
+        <form method="post" action="/findMovieFromList" class="movie-show-list">
           {% for movie in movieList: %}
-          <button id="movie-list-btn" name="searchMovie" type="submit" value={{movie['id']}}>{{movie['movieName']}}</button>
+          <button class="movie-list-btn" name="searchMovie" type="submit" value={{movie['id']}}>{{movie['movieName']}}</button>
           {% endfor %}
         </form>
       </div>
