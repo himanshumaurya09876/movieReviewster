@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
       href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
       rel="stylesheet"
     />
@@ -47,7 +53,9 @@
     <title>Movie Review Classifier | Search Movies</title>
   </head>
 
-  <body>
+
+  <body style="font-family: 'Courgette', cursive">
+   
     <div class="searchmovies-bg">
     <!-- Nav-bar -->
     <nav id="main-nav">
@@ -81,16 +89,6 @@
             "Western" ]'
           ></span> Movies
         </h3>
-        <!-- <h3>Explore Some Movies!</h3> -->
-        <!-- <p>
-          Movies, or films, are a type of visual communication which uses moving
-          pictures and sound to tell stories or teach people something. Most
-          people watch (view) movies as a type of entertainment or a way to have
-          fun. For some people, fun movies can mean movies that make them laugh,
-          while for others it can mean movies that make them cry, or feel
-          afraid.Most movies are made so that they can be shown on screen in
-          Cinemas and at home.
-        </p> -->
       </div>
     </section>
 
@@ -105,7 +103,7 @@
           </div>
         </div>
         <div class="column">
-          <div class="column-2 bg-primary">
+          <div class="column-2" id="searchmovies-right">
             <h3>Search Movies</h3>
             <h4>Search your favourite Movie from Our Database</h4>
             <div class="search">
@@ -167,9 +165,9 @@
       <div class="movie-list-container">
         <h3>Movies List</h3>
         <h4>OR Choose your movie from this List!</h4>
-        <form method="post" action="/findMovieFromList">
+        <form method="post" action="/findMovieFromList" id="movie-show-list">
           {% for movie in movieList: %}
-          <button  name="searchMovie" type="submit" value={{movie['id']}}>{{movie['movieName']}}</button>
+          <button id="movie-list-btn" name="searchMovie" type="submit" value={{movie['id']}}>{{movie['movieName']}}</button>
           {% endfor %}
         </form>
       </div>

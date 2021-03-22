@@ -36,10 +36,8 @@ p {
 /* Navbar */
 
 #main-nav {
-  /* background: rgba(255, 255, 255, 0.712); */
   color: #333;
   height: 20vh;
-  /* border-bottom: #c0db24 solid 2px; */
 }
 #main-nav .container {
   display: grid;
@@ -59,7 +57,6 @@ p {
 }
 #main-nav a {
   color: #333;
-  /* color: white; */
 }
 
 #main-nav ul {
@@ -113,26 +110,20 @@ p {
 
 /* Search Movies */
 .intro-searchmovie {
-  /* font-family: "Cinzel", serif; */
   font-family: "Lobster", cursive;
-  /* font-family: "Courgette", cursive; */
   height: 80vh;
   color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
+  text-align: center;
 }
 
 .intro-searchmovie h3 {
   font-size: 3.2rem;
 }
-/* .intro-searchmovie p {
-  font-size: 20px;
-  max-width: 1000px;
-  margin: 20px 0 30px;
-} */
+
 .search-movies a {
   color: #ffffff;
   background-color: rgba(10, 30, 50, 1);
@@ -178,8 +169,6 @@ p {
   padding: 30px;
   background-color: #767674;
   color: white;
-  /* color: #000; */
-
   font-family: "Courgette", cursive;
 }
 
@@ -194,16 +183,19 @@ p {
   font-weight: 500;
   margin-top: 0.7rem;
 }
-
+.flex-columns .column .column-2 .search .search-box::placeholder {
+  color: #f4f4f4;
+}
 .flex-columns .column .column-2 .search .search-box {
+  font-family: "Courgette", cursive;
   height: 2rem;
-  width: 40vw;
+  width: 30vw;
   padding: 1.5rem;
   margin-top: 2rem;
-  background-color: rgba(10, 30, 50, 1);
-  color: whitesmoke;
+  background-color: darkslategrey;
+  color: white;
   border-radius: 50px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   outline: none;
 }
 
@@ -211,15 +203,17 @@ p {
   padding: 0.7rem;
   margin-top: 2rem;
   margin-left: 15px;
-  background-color: skyblue;
+  background-color: transparent;
   border: none;
   outline: none;
-  color: white;
+  color: #333;
+  border-bottom: transparent 5px solid;
+  transition: all 0.6s;
 }
 .flex-columns .column .column-2 .search .btn:hover {
   opacity: 0.8;
   border-bottom: black 5px solid;
-  color: white;
+  color: #767674;
   cursor: pointer;
 }
 /* Add Review */
@@ -261,8 +255,6 @@ p {
 
 #about-info .info-left {
   float: left;
-  /* text-align: center; */
-  /* justify-content: center; */
   padding-top: 2rem;
   width: 50%;
   min-height: 100%;
@@ -271,7 +263,6 @@ p {
   font-family: "Courgette", cursive;
   text-align: center;
   justify-content: center;
-
   font-size: 3rem;
   margin-bottom: 0.7rem;
   width: 100%;
@@ -279,8 +270,6 @@ p {
 }
 
 #about-info .info-left p {
-  /* font-family: "Indie Flower", cursive;
-  font-weight: bold; */
   font-family: "Courgette", cursive;
   font-size: 1rem;
   padding-left: 3vw;
@@ -325,19 +314,18 @@ p {
 }
 #about-dev .dev .about-dev h3 {
   margin-top: 1rem;
-  /* font-family: "Lobster", cursive; */
   font-family: "Courgette", cursive;
   color: #fff;
   font-size: 1.4rem;
   text-align: center;
 }
 #about-dev .dev .about-dev p {
-  /* margin-top: 1rem; */
   font-family: "Courgette", cursive;
   color: #fff;
   font-size: 1rem;
   padding: 1rem;
 }
+
 /* Contact Page */
 #contact-form {
   background: url("contact-bg.jpg") no-repeat center center/cover;
@@ -414,14 +402,14 @@ p {
 
 /* Search Results */
 #search-results {
-  background: url("searchresults-bg.jpg") no-repeat center center/cover;
-  height: 70vh;
+  background: url("searchmovie_bg_5.jpg") repeat;
+  width: 100%;
 }
 #search-results .search-results-container {
   padding: 2rem;
   margin: auto;
   width: 80%;
-  height: 50vh;
+  height: 100%;
 }
 #search-results .search-results-container h3 {
   font-size: 2rem;
@@ -458,7 +446,6 @@ p {
   background: url("movieslist-bg.jpg") no-repeat center center/cover;
 }
 #movie-list .movie-list-container {
-  /* background-color: rgb(161, 20, 126); */
   padding: 2rem;
   margin: auto;
   width: 80%;
@@ -467,7 +454,6 @@ p {
   font-size: 4rem;
   padding: 1rem;
   text-align: center;
-  /* padding-left: 3vw; */
   margin-bottom: 1rem;
   font-weight: bolder;
   text-decoration: solid;
@@ -499,13 +485,18 @@ p {
   color: #ffffff;
 }
 #movie-category {
+  font-weight: 900;
+  border-top: #000 8px solid;
+  border-bottom: #000 8px solid;
+  padding: 0 0.5rem;
+  border-radius: 50px;
   font-family: "Courgette", cursive;
-  color: mediumorchid;
-  text-decoration: underline;
+  color: darkred;
 }
 /* footer */
 
 .footer {
+  font-family: "Courgette", cursive;
   background-color: #333;
   color: #ffffff;
   display: flex;
@@ -534,15 +525,31 @@ p {
 
 .flex-container {
   display: flex;
+  margin-bottom: 3rem;
 }
 
 .flex-item-left {
-  flex: 75%;
+  flex: 70%;
+  font-size: 2rem;
+  padding: 1.5rem 0;
 }
 
 .flex-item-right {
-  flex: 25%;
+  background-color: #333;
+  padding: 1rem;
+  padding-left: 2rem;
+  width: 100%;
+  height: fit-content;
+  border-radius: 2rem;
+  border-bottom: yellow 0.33rem solid;
+  flex: 30%;
 }
+.flex-item-right h5 {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+  color: #ffffff;
+}
+
 /* main-nav index page */
 .intro-bg {
   background: url("intro-bg_1.jpg") no-repeat center center/cover;
@@ -557,4 +564,52 @@ p {
   height: 100vh;
   color: #333;
   font-weight: bold;
+}
+#searchmovies-right {
+  color: #000;
+  background-color: #f6f7f9;
+}
+
+.prediction {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 2rem 0;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+#movie-show-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 4rem;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  min-height: 100px;
+  height: 100%;
+}
+#movie-list-btn {
+  /* margin-top: 0.6rem; */
+  font-family: "Courgette", cursive;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-color: #f9c57c;
+  color: #000;
+  cursor: pointer;
+  border: none;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: all 0.5s;
+  padding: 1.4rem 0;
+  border-bottom: transparent 10px solid;
+}
+#movie-list-btn:hover {
+  background-color: #333;
+  border-bottom: #dfd6ce 10px solid;
+  transform: scale(1.2);
+  color: #ffffff;
+  font-size: 1.7;
+  font-weight: 900;
 }

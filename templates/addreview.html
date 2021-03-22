@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap"
@@ -35,7 +39,7 @@
     <title>Movie Review Classifier | Add Review</title>
   </head>
 
-  <body>
+  <body style="font-family: 'Courgette', cursive">
     <!-- Nav-bar -->
     <nav id="main-nav">
       <div class="container">
@@ -49,7 +53,7 @@
     </nav>
 
     <!-- Form -->
-    <div id="contact-form">
+    <div id="contact-form" class="add-review-bg">
       <div class="container">
         <h1 class="l-heading">
           Add Your <span class="text-primary">Review </span>
@@ -78,24 +82,18 @@
         </form>
       </div>
     </div>
-    <!-- Result after Submitting Review-->
 
+    <!-- Result after Submitting Review-->
     {% if prediction: %}
     <section id="search-results">
       <div class="search-results-container">
-        <h3>
+        <h4 style="font-size: 1.55rem; text-align: center; margin-bottom: 2rem;">
           &#128526; Thankyou very much {{name}}, for your valuable contribution
           &#128519;!!!
-        </h3>
+        </h4>
         <div class="flex-container">
           <div class="flex-item-left">
             <h2>{{movieName}}</h2>
-            <h4>{{review}}</h4>
-            {% if prediction=="Positive": %}
-            <p>&#128525; Positive Review &#128525;</p>
-            {% else: %}
-            <p>&#128557; Negative Review &#128557;</p>
-            {% endif %}
           </div>
           <div class="flex-item-right">
             <h5>Rating</h5>
@@ -103,11 +101,17 @@
               {% for i in range(rating): %}
               <span style="font-size: 300%; color: yellow">&starf;</span>
               {% endfor %} {% for i in range(5-rating): %}
-              <span style="font-size: 300%; color: black">&star;</span>
+              <span style="font-size: 300%; color: white;">&starf;</span>
               {% endfor %}
             </div>
           </div>
         </div>
+        <h4 style="line-height:1.7; ">{{review}}</h4>
+        {% if prediction=="Positive": %}
+        <p class="prediction">&#128525; Positive Review &#128525;</p>
+        {% else: %}
+        <p class="prediction">&#128557; Negative Review &#128557;</p>
+        {% endif %}
       </div>
     </section>
     {%endif%}
