@@ -55,9 +55,15 @@
     <!-- Contact Form -->
     <div id="contact-form">
       <div class="container">
+        {% if submitted: %}
+        <p style="text-align: center;padding-top: 5rem;padding-bottom: 5rem;">&#128526; Thankyou very much for your feedback &#128519;!!!</p>
+        {% else %}
         <h1 class="l-heading"><span class="text-primary">Contact </span> Us</h1>
+        {% if isEmpty: %}
+        <p>***Please fill all the input fields***</p>
+        {% endif %}
         <p>Please fill out the form below to Contact us</p>
-        <form action="process.php">
+        <form action="/feedbackSubmitted" method="post">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" />
@@ -78,6 +84,7 @@
           </div>
           <button type="submit" class="btn">Submit</button>
         </form>
+        {% endif %}
       </div>
     </div>
 

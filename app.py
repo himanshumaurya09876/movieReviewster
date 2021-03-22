@@ -10,6 +10,7 @@ from bson.objectid import ObjectId
 client = pymongo.MongoClient("mongodb+srv://admin:ilovecoding@cluster0.yy73e.mongodb.net/MovieReviewDB?retryWrites=true&w=majority")
 movieReviewsDB = client["MovieReviewDB"]
 movieReview = movieReviewsDB["MovieReview"]
+feedbackCollection=movieReviewsDB["FeedbackCollection"]
 
 # print(movieReview.find({}))
 
@@ -76,6 +77,9 @@ def submitReview():
 		review=request.form['review']
 		name=request.form['name']
 		movieName=request.form['Moviename'].upper()
+
+		if name=="" or review=="" or movieName=="":
+			return render_template("addreview.html",isEmpty=True)
 
 		pred=classifyReview(review)
 		prediction=""
@@ -144,6 +148,19 @@ def findMovieFromList():
 
 	return render_template("searchmovies.html",foundMovie=foundMovie,movieList=movieList)
 
+
+@app.route("/feedbackSubmitted",methods=['GET','POST'])
+def feedbackSubmitted():
+	if request.method=='POST':
+		name=request.form['name']
+		email=request.form['email']
+		message=request.form['message']
+
+	if name=="" or email=="" or message=="":
+		return render_template("contact.html",isEmpty=True)
+
+	feedbackCollection.insert_one({"name":name,"email":email,"message":message})
+	return render_template("contact.html",submitted=True)
 
 
 if __name__=="__main__":

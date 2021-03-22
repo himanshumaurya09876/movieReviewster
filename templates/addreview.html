@@ -58,6 +58,9 @@
         <h1 class="l-heading">
           Add Your <span class="text-primary">Review </span>
         </h1>
+        {% if isEmpty: %}
+        <p>***Please fill all the input fields***</p>
+        {% endif %}
         <p>Please fill out the form below to submit your review</p>
         <form action="/submitReview" method="post">
           <div class="form-group">
