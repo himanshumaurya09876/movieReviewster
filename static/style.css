@@ -34,50 +34,61 @@ p {
 }
 
 /* Navbar */
+
 #main-nav {
-  background: #333;
-  color: white;
+  color: #333;
+  height: 20vh;
 }
 #main-nav .container {
   display: grid;
   grid-template-columns: 2fr 1fr;
   align-items: center;
   padding: 1.5rem;
+  color: #333;
 }
 
 #main-nav .logo {
+  font-family: "Lobster", cursive;
+  color: #333;
   font-size: 2rem;
   font-weight: bolder;
   padding-left: 5rem;
   padding-top: 1rem;
 }
 #main-nav a {
-  color: white;
+  color: #333;
 }
 
 #main-nav ul {
   list-style: none;
   justify-self: center;
   display: flex;
+  color: #333;
 }
 #main-nav ul li a {
+  font-family: "Lobster", cursive;
+  font-size: larger;
   padding: 1rem;
+  padding-bottom: 0.5rem;
   font-weight: bold;
+  border-bottom: transparent 4px solid;
+  transition: all 0.4s;
+  color: #333;
 }
 #main-nav ul li a.current {
-  border-bottom: #28a745 4px solid;
-  color: #ffffff;
+  border-bottom: #c7f814 4px solid;
+  color: #333;
 }
 #main-nav ul li a:hover {
-  border-bottom: aliceblue 4px solid;
+  border-bottom: rgb(0, 136, 255) 4px solid;
+  color: #333;
 }
 
 /* Introduction */
-
 .intro {
-  background: #333;
-  height: 40vh;
-  color: #ffffff;
+  font-family: "Courgette", cursive;
+  height: 80vh;
+  color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,12 +100,30 @@ p {
   font-size: 45px;
 }
 .intro p {
-  font-size: 20px;
+  margin-top: 1rem;
+  font-weight: normal;
+  font-size: 1.4rem;
   max-width: 1000px;
   margin: 20px 0 30px;
+  color: #333;
 }
 
 /* Search Movies */
+.intro-searchmovie {
+  font-family: "Lobster", cursive;
+  height: 80vh;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.intro-searchmovie h3 {
+  font-size: 3.2rem;
+}
+
 .search-movies a {
   color: #ffffff;
   background-color: rgba(10, 30, 50, 1);
@@ -138,8 +167,9 @@ p {
   justify-content: center;
   text-align: center;
   padding: 30px;
-  background-color: darkslategrey;
+  background-color: #767674;
   color: white;
+  font-family: "Courgette", cursive;
 }
 
 .flex-columns .column .column-2 h3 {
@@ -153,16 +183,19 @@ p {
   font-weight: 500;
   margin-top: 0.7rem;
 }
-
+.flex-columns .column .column-2 .search .search-box::placeholder {
+  color: #f4f4f4;
+}
 .flex-columns .column .column-2 .search .search-box {
+  font-family: "Courgette", cursive;
   height: 2rem;
-  width: 40vw;
+  width: 30vw;
   padding: 1.5rem;
   margin-top: 2rem;
-  background-color: rgba(10, 30, 50, 1);
-  color: whitesmoke;
+  background-color: darkslategrey;
+  color: white;
   border-radius: 50px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   outline: none;
 }
 
@@ -170,15 +203,17 @@ p {
   padding: 0.7rem;
   margin-top: 2rem;
   margin-left: 15px;
-  background-color: darkslategrey;
+  background-color: transparent;
   border: none;
   outline: none;
-  color: white;
+  color: #333;
+  border-bottom: transparent 5px solid;
+  transition: all 0.6s;
 }
 .flex-columns .column .column-2 .search .btn:hover {
   opacity: 0.8;
   border-bottom: black 5px solid;
-  color: white;
+  color: #767674;
   cursor: pointer;
 }
 /* Add Review */
@@ -206,7 +241,7 @@ p {
 #about-info .info-right {
   float: right;
   width: 50%;
-  min-height: 100%;
+  min-height: 80vh;
 }
 #about-info .info-right img {
   display: block;
@@ -215,41 +250,30 @@ p {
   margin-bottom: 1rem;
   width: 100%;
   border-radius: 45px;
+  height: 65vh;
 }
 
 #about-info .info-left {
   float: left;
-  text-align: center;
-  justify-content: center;
-  padding-top: 15vh;
+  padding-top: 2rem;
   width: 50%;
   min-height: 100%;
 }
 #about-info .info-left .l-heading {
+  font-family: "Courgette", cursive;
+  text-align: center;
+  justify-content: center;
   font-size: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
+  width: 100%;
+  line-height: 1;
 }
 
 #about-info .info-left p {
-  font-size: 1.3rem;
-  padding-left: 5vw;
-  padding-right: 5vw;
-}
-
-/* About Developers */
-
-#about-dev {
-  height: 100%;
-  background: url("dev-bg.jpg") no-repeat center center/cover;
-  padding-top: 60px;
-}
-#about-dev h2 {
-  color: #f4f4f4;
-  margin-top: 100px;
-  font-size: 3.5rem;
-  margin-bottom: 100px;
-  text-align: center;
-  padding-bottom: 40px;
+  font-family: "Courgette", cursive;
+  font-size: 1rem;
+  padding-left: 3vw;
+  padding-right: 3vw;
 }
 
 .text-primary {
@@ -260,22 +284,46 @@ p {
   font-weight: bold;
   background: #dfd6ce;
 }
-#about-dev .about-dev {
-  height: 20vh;
-  padding: 20px;
-  margin-bottom: 100px;
-  border-radius: 25px;
-  opacity: 0.8;
-}
-#about-dev .about-dev p {
-  padding: 30px;
-}
+/* About Developers */
 
-#about-dev .about-dev img {
-  float: left;
-  width: 130px;
-  margin-right: 50px;
-  border-radius: 50%;
+#about-dev {
+  height: 100%;
+  background: url("dev-bg.jpg") no-repeat center center/cover;
+  padding-top: 60px;
+  height: 100%;
+}
+#about-dev h2 {
+  font-family: "Lobster", cursive;
+  color: #f4f4f4;
+  margin-top: 3rem;
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  padding-bottom: 40px;
+}
+#about-dev .dev {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+#about-dev .dev .about-dev img {
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+  margin-left: 12vw;
+}
+#about-dev .dev .about-dev h3 {
+  margin-top: 1rem;
+  font-family: "Courgette", cursive;
+  color: #fff;
+  font-size: 1.4rem;
+  text-align: center;
+}
+#about-dev .dev .about-dev p {
+  font-family: "Courgette", cursive;
+  color: #fff;
+  font-size: 1rem;
+  padding: 1rem;
 }
 
 /* Contact Page */
@@ -354,14 +402,14 @@ p {
 
 /* Search Results */
 #search-results {
-  background: url("searchresults-bg.jpg") no-repeat center center/cover;
-  height: 70vh;
+  background: url("searchmovie_bg_5.jpg") repeat;
+  width: 100%;
 }
 #search-results .search-results-container {
   padding: 2rem;
   margin: auto;
   width: 80%;
-  height: 50vh;
+  height: 100%;
 }
 #search-results .search-results-container h3 {
   font-size: 2rem;
@@ -398,7 +446,6 @@ p {
   background: url("movieslist-bg.jpg") no-repeat center center/cover;
 }
 #movie-list .movie-list-container {
-  /* background-color: rgb(161, 20, 126); */
   padding: 2rem;
   margin: auto;
   width: 80%;
@@ -407,7 +454,6 @@ p {
   font-size: 4rem;
   padding: 1rem;
   text-align: center;
-  /* padding-left: 3vw; */
   margin-bottom: 1rem;
   font-weight: bolder;
   text-decoration: solid;
@@ -438,10 +484,19 @@ p {
   background-color: #333;
   color: #ffffff;
 }
-
+#movie-category {
+  font-weight: 900;
+  border-top: #000 8px solid;
+  border-bottom: #000 8px solid;
+  padding: 0 0.5rem;
+  border-radius: 50px;
+  font-family: "Courgette", cursive;
+  color: darkred;
+}
 /* footer */
 
 .footer {
+  font-family: "Courgette", cursive;
   background-color: #333;
   color: #ffffff;
   display: flex;
@@ -468,14 +523,94 @@ p {
   font-size: 1.3rem;
 }
 
-.flex-container{
+.flex-container {
   display: flex;
+  margin-bottom: 3rem;
 }
 
-.flex-item-left{
-  flex: 75%;
+.flex-item-left {
+  flex: 70%;
+  font-size: 2rem;
+  padding: 1.5rem 0;
 }
 
-.flex-item-right{
-  flex:25%;
+.flex-item-right {
+  background-color: #333;
+  padding: 1rem;
+  padding-left: 2rem;
+  width: 100%;
+  height: fit-content;
+  border-radius: 2rem;
+  border-bottom: yellow 0.33rem solid;
+  flex: 30%;
+}
+.flex-item-right h5 {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+  color: #ffffff;
+}
+
+/* main-nav index page */
+.intro-bg {
+  background: url("intro-bg_1.jpg") no-repeat center center/cover;
+  height: 100vh;
+  color: #333;
+  font-weight: bold;
+}
+/* search movies page */
+.searchmovies-bg {
+  background: url("searchmovie_bg_3.jpg") no-repeat center center/cover;
+
+  height: 100vh;
+  color: #333;
+  font-weight: bold;
+}
+#searchmovies-right {
+  color: #000;
+  background-color: #f6f7f9;
+}
+
+.prediction {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 2rem 0;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.movie-show-list {
+  /* min-height: 100px; */
+  height: 100%;
+}
+.movie-list-btn {
+  margin-right: 0.2rem;
+  margin-left: 0rem;
+  margin-bottom: 0rem;
+  margin-top: 0.4rem;
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px;
+  text-decoration: none;
+  border: none;
+}
+.movie-list-btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
 }

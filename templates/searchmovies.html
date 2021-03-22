@@ -6,24 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
       rel="stylesheet"
     />
     <script
       src="https://kit.fontawesome.com/0645962c25.js"
       crossorigin="anonymous"
     ></script>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='style.css') }}"
+    />
+    <script src="{{ url_for('static',filename='typewriter.js') }}"></script>
+
     <!-- <link rel="stylesheet" href="style.css" /> -->
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <title>Movie Review Classifer | Search Movies</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <title>Movie Review Classifier | Search Movies</title>
   </head>
 
-  <body>
+
+  <body style="font-family: 'Courgette', cursive">
+   
+    <div class="searchmovies-bg">
     <!-- Nav-bar -->
     <nav id="main-nav">
       <div class="container">
-        <h1 class="logo"><a href="/"> Movie Review Classifer</a></h1>
+        <h1 class="logo"><a href="/"> Movie Review Classifier</a></h1>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="about">About</a></li>
@@ -34,20 +71,28 @@
 
     <!-- Introduction -->
     <section>
-      <div class="intro">
-        <h3>Explore Some Movies!</h3>
-        <p>
-          Movies, or films, are a type of visual communication which uses moving
-          pictures and sound to tell stories or teach people something. Most
-          people watch (view) movies as a type of entertainment or a way to have
-          fun. For some people, fun movies can mean movies that make them laugh,
-          while for others it can mean movies that make them cry, or feel
-          afraid.Most movies are made so that they can be shown on screen in
-          Cinemas and at home.
-        </p>
+      <div class="intro-searchmovie">
+        <h3>
+          Explore Some 
+          <span
+             id="movie-category"
+            class="txt-type"
+            data-wait="3000"
+            data-words='["Action", 
+            "Comedy",
+            "Drama",
+            "Fantasy",
+            "Horror",
+            "Mystery",
+            "Romance",
+            "Thriller",
+            "Western" ]'
+          ></span> Movies
+        </h3>
       </div>
     </section>
 
+  </div>
     <!-- Search Movies -->
 
     <section class="search-movies flex-columns">
@@ -58,7 +103,7 @@
           </div>
         </div>
         <div class="column">
-          <div class="column-2 bg-primary">
+          <div class="column-2" id="searchmovies-right">
             <h3>Search Movies</h3>
             <h4>Search your favourite Movie from Our Database</h4>
             <div class="search">
@@ -90,24 +135,25 @@
         </div>
         {% else %}
         <div>
-          <h4>{{foundMovie["movieName"]}}</h4>
+          <h4 style="font-size: 2.2rem;">{{foundMovie["movieName"]}}</h4>
           <p>Total reviews: {{foundMovie["totalReviews"]}}</p>
           <p>Positive Reviews: {{foundMovie["positiveReviews"]}}</p>
           <p>Negative Reviews: {{foundMovie["totalReviews"]-foundMovie["positiveReviews"]}}</p>
-          <p>Rating:
+          <p style=" margin-bottom: 3rem;">Rating:
+            <br>
           {% for i in range(foundMovie["rating"]): %}
-          <span style="font-size:200%;color:yellow;">&starf;</span>
+          <span style="font-size:200%;color: black;">&starf;</span>
           {% endfor %}
 
           {% for i in range(5-foundMovie["rating"]): %}
           <span style="font-size:200%;color:black;">&star;</span>
           {% endfor %}
           </p>
-        </br>
+        <!-- </br> -->
           <h4>Reviews are:- </h4>
           <ol>
             {% for rev in foundMovie["reviewsList"]: %}
-              <li>{{rev["name"]}} :- {{rev["review"]}}</li>
+              <li style="margin-bottom: 1rem;">{{rev["name"]}} :- {{rev["review"]}}</li>
             {% endfor %}
           </ol>
         {% endif %}
@@ -120,9 +166,9 @@
       <div class="movie-list-container">
         <h3>Movies List</h3>
         <h4>OR Choose your movie from this List!</h4>
-        <form method="post" action="/findMovieFromList">
+        <form method="post" action="/findMovieFromList" class="movie-show-list">
           {% for movie in movieList: %}
-          <button  name="searchMovie" type="submit" value={{movie['id']}}>{{movie['movieName']}}</button>
+          <button class="movie-list-btn" name="searchMovie" type="submit" value={{movie['id']}}>{{movie['movieName']}}</button>
           {% endfor %}
         </form>
       </div>
@@ -147,7 +193,7 @@
           ><i class="fab fa-youtube fa-2x"></i
         ></a>
       </div>
-      <p>Copyright &copy; 2021 - Movie Review Classifer</p>
+      <p>Copyright &copy; 2021 - Movie Review Classifier</p>
       <p>Created by: Himanshu Maurya & Kumar Sundaram</p>
     </footer>
   </body>

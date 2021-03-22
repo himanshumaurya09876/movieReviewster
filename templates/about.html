@@ -6,24 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
       rel="stylesheet"
     />
     <script
       src="https://kit.fontawesome.com/0645962c25.js"
       crossorigin="anonymous"
     ></script>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='style.css') }}"
+    />
+    <script src="{{ url_for('static',filename='typewriter.js') }}"></script>
+
     <!-- <link rel="stylesheet" href="style.css" /> -->
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <title>Movie Review Classifer | About</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <title>Movie Review Classifier | About</title>
   </head>
 
   <body>
     <!-- Nav-bar -->
     <nav id="main-nav">
       <div class="container">
-        <h1 class="logo"><a href="/"> Movie Review Classifer</a></h1>
+        <h1 class="logo"><a href="/"> Movie Review Classifier</a></h1>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a class="current" href="about">About</a></li>
@@ -37,14 +65,32 @@
       <div class="container">
         <div class="info-left">
           <h1 class="l-heading">
-            <span class="text-primary">About</span> Movie Review Classifer
+            <span class="text-primary">About</span> Movie Review Classifier
           </h1>
           <p>
-            The aim of this project is to make a movie review classifier using
-            machine learning and deep learning and then use the same to predict
-            rating of a movie. This project uses machine learning and deep
-            learning to classify reviews of a movie as positive or negative
-            (Sentiment Analysis) and then predict rating of that movie
+            <i class="fab fa-bandcamp"></i> Taken a large dataset and then after
+            preprocessing, trained the models of Machine learning :- Bernoulli
+            Naive Bayes and Multinomial Naive Bayes and one model of Deep
+            learning :- Artificial Neural Network
+          </p>
+          <p>
+            <i class="fab fa-bandcamp"></i>
+            Then compare the result of three models and used the best one at the
+            backend for classification of reviews.
+          </p>
+          <p>
+            <i class="fab fa-bandcamp"></i> Now we used HTML, CSS and JavaScript
+            for the frontend.
+          </p>
+          <p>
+            <i class="fab fa-bandcamp"></i>
+            Then using Flask we have integrated our best ML/DL model with the
+            frontend.
+          </p>
+          <p>
+            <i class="fab fa-bandcamp"></i>
+            After setting the database with MongoDB and pyMongo we were able to
+            get this awesome full functional platform.
           </p>
         </div>
         <div class="info-right">
@@ -60,29 +106,45 @@
     <section id="about-dev">
       <div class="container">
         <h2 class="l-heading">
-          What Our <span class="text-primary">Developers</span> Say
+          About Our
+          <span class="text-primary">
+            <span
+              class="txt-type text-primary"
+              data-wait="3000"
+              data-words='["Developers"]'
+            ></span>
+          </span>
         </h2>
+        <div class="dev">
+          <div class="about-dev">
+            <img src="static/himanshu maurya_pic.png" alt="Dev-1" />
+            <h3 class="dev-name">Himanshu Maurya</h3>
+            <p>
+              " Code lover and Curious to learn new technologies of computer
+              science and engineering. Skilled in Data Structure and Algorithms,
+              C language, C++, Python, Machine Learning, Deep Learning and
+              Full-Stack Web Development. <br> Exploring the vast field of Data
+              Science. <br> Experienced in solving problems using coding skills.
+              Student of Computer Science at Delhi Technological University....
+              . "
+            </p>
+          </div>
 
-        <div class="about-dev bg-primary">
-          <img src="static/dev-1.png" alt="Dev-1" />
-          <p>
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-            perspiciatis, odio in harum iusto ducimus tenetur id asperiores! Id
-            corporis ea obcaecati ab molestiae recusandae doloribus dolorum,
-            excepturi dignissimos eveniet amet nihil autem non saepe porro
-            laboriosam, maiores nemo impedit."
-          </p>
-        </div>
-
-        <div class="about-dev bg-primary">
-          <img src="static/dev-1.png" alt="Dev-2" />
-          <p>
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
-            perspiciatis, odio in harum iusto ducimus tenetur id asperiores! Id
-            corporis ea obcaecati ab molestiae recusandae doloribus dolorum,
-            excepturi dignissimos eveniet amet nihil autem non saepe porro
-            laboriosam, maiores nemo impedit.""
-          </p>
+          <div class="about-dev">
+            <img src="static/kumar sundaram_pic.jpg" alt="Dev-2" />
+            <h3 class="dev-name">Kumar Sundaram</h3>
+            <p>
+              " Hi! I am Kumar SUndaram, a web designer/developer focused on
+              crafting great web experiences. Designing and Coding have been my
+              passion since the days I started working with computers but I
+              found myself into web design/development since 2017. I enjoy
+              creating beautifully designed, intuitive and functional websites.
+              For over past 4 years,
+              <br> I have worked for some of the best digital
+              agencies and wonderful clients to create some award winning works.
+              And, I can make this happen for your business as well. "
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -106,7 +168,7 @@
           ><i class="fab fa-youtube fa-2x"></i
         ></a>
       </div>
-      <p>Copyright &copy; 2021 - Movie Review Classifer</p>
+      <p>Copyright &copy; 2021 - Movie Review Classifier</p>
       <p>Created by: Himanshu Maurya & Kumar Sundaram</p>
     </footer>
   </body>
